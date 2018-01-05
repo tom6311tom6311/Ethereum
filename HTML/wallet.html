@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>C-Coin</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body onload="loadEvents(['wallet'])">
+  <img class="loader" src="img/loading.png"></img>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">C-Coin</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li>
+            <h2 class="wallet-title">--</h2>
+        </li>
+      </ul>  
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+            <ul id="tabs-swipe-demo" class="tabs">
+                <li class="tab col s3"><a class="active" href="#test-swipe-1">Wallet</a></li>
+                <li class="tab col s3"><a href="#test-swipe-2">Loan</a></li>
+                <li class="tab col s3"><a href="#test-swipe-3">ICO</a></li>
+                <li class="tab col s3"><a href="#test-swipe-4">User Profile</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="test-swipe-1" class="col s12">
+      <div class="wallet-page">
+          <div class="wallet-wrapper">
+            <div class="wallet-header">
+                <h2 class="tabtitle">Wallet</h2>
+                <div class="wallet-nav">
+                    <ul>
+                        <li><a class="info-tab">Info</a></li>
+                        <li><a class="transfer-tab">Transfer</a></li>
+                        <li><a class="logout-tab">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wallet-content">
+                <div class="wallet-content-info">
+                    <table class="wallet-content-info-table">
+                        <tr>
+                            <th>Account ID  :</th>
+                            <th id="wallet-info-aid">--</th>
+                        </tr>
+                        <tr>
+                            <th>Balance    :</th>
+                            <th id="wallet-info-balance">--</th>
+                        </tr>
+                    </table>
+                    <div class="wallet-content-refresh-wrapper">
+                        <button id="wallet-content-refresh-btn" class="wallet-content-btn">Refresh</button>
+                    </div>
+                </div>
+                <div class="wallet-content-transfer">
+                    <form class="col s12 wallet-content-transfer-form">
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input id="transfer-toid" type="text" class="validate" name="to_id">
+                              <label for="transfer-toid">Receiver ID</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input id="transfer-amount" type="text" class="validate" name="amount">
+                              <label for="transfer-amount">Amount (eth)</label>
+                            </div>
+                        </div>
+                        <div style="text-align:center;">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                        </div>
+                    </form>
+<!--                     <form class="form ">
+                        <input id="transfer-toid" type="text" name="to_id" placeholder="Receiver ID"/>
+                        <input id="transfer-amount" type="text" name="amount" placeholder="Amount (eth)"/>
+                        <input class="submit-btn transfer-submit-btn" type="submit" />
+                    </form> -->
+                </div>
+                <div class="wallet-content-logout">
+                    <div class="wallet-content-logout-wrapper">
+                        <button id="wallet-content-logout-btn" class="wallet-content-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div id="test-swipe-2" class="col s12">
+        <div class="wallet-page">
+          <div class="wallet-wrapper">
+            <div class="wallet-header">
+                <h2 class="tabtitle">Loan</h2>
+            </div>
+            <div class="wallet-content">
+                AAA
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="test-swipe-3" class="col s12">
+        <div class="wallet-page">
+          <div class="wallet-wrapper">
+            <div class="wallet-header">
+                <h2 class="tabtitle">ICO</h2>
+            </div>
+            <div class="wallet-content">
+                BBB
+          </div>
+         </div>
+      </div>
+    </div>
+    <div id="test-swipe-4" class="col s12">
+        <div class="wallet-page">
+          <div class="wallet-wrapper">
+            <div class="wallet-header">
+                <h2 class="tabtitle">User Profile</h2>
+            </div>
+            <div class="wallet-content">
+                CCC
+          </div>
+         </div>
+      </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $('ul.tabs').tabs();
+      });
+</script>
+</html>
